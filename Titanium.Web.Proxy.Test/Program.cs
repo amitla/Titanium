@@ -19,7 +19,20 @@ namespace Titanium.Web.Proxy.Test
             NativeMethods.handler = new NativeMethods.ConsoleEventDelegate(ConsoleEventCallback);
             NativeMethods.SetConsoleCtrlHandler(NativeMethods.handler, true);
 
+            controller.ListeningPort = 65444;
+            Console.Write("Choose port? (Y/N):");
 
+            if (Console.ReadLine().Trim().ToLower() == "y")
+            {
+                Console.Write("Enter port: ");
+                int port = 0;
+                while (!int.TryParse(Console.ReadLine().Trim(), out port))
+                {
+                    Console.Write("Port must be a nubmer. Enter port: ");
+                }
+
+                controller.ListeningPort = port;
+            }
 
             Console.Write("Do you want to monitor HTTPS? (Y/N):");
 
@@ -34,8 +47,9 @@ namespace Titanium.Web.Proxy.Test
             if (Console.ReadLine().Trim().ToLower() == "y")
             {
                 controller.SetAsSystemProxy = true;
-
             }
+
+            
 
             //Start proxy controller
             controller.StartProxy();

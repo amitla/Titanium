@@ -175,9 +175,12 @@ namespace Titanium.Web.Proxy
                     }
                 }
 
+                //var redirect = ProxyServer.RedirectToSaftyDomainsList.Any(x => Regex.IsMatch(httpRemoteUri.Host, x) && !httpRemoteUri.IsFile);
 
                 //construct the web request that we are going to issue on behalf of the client.
                 args.proxyRequest = (HttpWebRequest)HttpWebRequest.Create(httpRemoteUri);
+
+                args.proxyRequest.AllowAutoRedirect = false;
                 args.proxyRequest.Proxy = null;
                 args.proxyRequest.UseDefaultCredentials = true;
                 args.proxyRequest.Method = httpMethod;
@@ -185,7 +188,6 @@ namespace Titanium.Web.Proxy
                 args.clientStream = clientStream;
                 args.clientStreamReader = clientStreamReader;
                 args.clientStreamWriter = clientStreamWriter;
-                args.proxyRequest.AllowAutoRedirect = false;
                 args.proxyRequest.AutomaticDecompression = DecompressionMethods.None;
                 args.requestHostname = args.proxyRequest.RequestUri.Host;
                 args.requestURL = args.proxyRequest.RequestUri.OriginalString;
@@ -195,7 +197,6 @@ namespace Titanium.Web.Proxy
                 args.requestIsAlive = args.proxyRequest.KeepAlive;
                 args.proxyRequest.ConnectionGroupName = args.requestHostname;
                 args.proxyRequest.AllowWriteStreamBuffering = true;
-
 
                 //If requested interception
                 if (BeforeRequest != null)
@@ -357,7 +358,7 @@ namespace Titanium.Web.Proxy
                 args.proxyRequest.AllowWriteStreamBuffering = true;
                 try
                 {
-                  
+
                     int totalbytesRead = 0;
 
                     int bytesToRead;
@@ -401,7 +402,7 @@ namespace Titanium.Web.Proxy
             else if (args.proxyRequest.SendChunked)
             {
                 args.proxyRequest.AllowWriteStreamBuffering = true;
-               
+
                 try
                 {
                     while (true)
@@ -424,8 +425,8 @@ namespace Titanium.Web.Proxy
                         }
 
                     }
-                 
-                    
+
+
                     postStream.Close();
                 }
                 catch

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B6DBABDC-C985-4872-9C38-B4E5079CBC4B}"
 EndProject
@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6FD3B8
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AVG.QA.ProxyHelper", "AVG.QA.ProxyHelper\AVG.QA.ProxyHelper.csproj", "{62D104C5-2B03-4083-B604-268E466E3B4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,6 +48,18 @@ Global
 		{8D73A1BE-868C-42D2-9ECE-F32CC1A02906}.Release|x64.Build.0 = Release|x64
 		{8D73A1BE-868C-42D2-9ECE-F32CC1A02906}.Release|x86.ActiveCfg = Release|x86
 		{8D73A1BE-868C-42D2-9ECE-F32CC1A02906}.Release|x86.Build.0 = Release|x86
+		{62D104C5-2B03-4083-B604-268E466E3B4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62D104C5-2B03-4083-B604-268E466E3B4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62D104C5-2B03-4083-B604-268E466E3B4F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{62D104C5-2B03-4083-B604-268E466E3B4F}.Debug|x64.Build.0 = Debug|Any CPU
+		{62D104C5-2B03-4083-B604-268E466E3B4F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{62D104C5-2B03-4083-B604-268E466E3B4F}.Debug|x86.Build.0 = Debug|Any CPU
+		{62D104C5-2B03-4083-B604-268E466E3B4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62D104C5-2B03-4083-B604-268E466E3B4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62D104C5-2B03-4083-B604-268E466E3B4F}.Release|x64.ActiveCfg = Release|Any CPU
+		{62D104C5-2B03-4083-B604-268E466E3B4F}.Release|x64.Build.0 = Release|Any CPU
+		{62D104C5-2B03-4083-B604-268E466E3B4F}.Release|x86.ActiveCfg = Release|Any CPU
+		{62D104C5-2B03-4083-B604-268E466E3B4F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

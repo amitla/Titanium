@@ -39,6 +39,7 @@ namespace Titanium.Web.Proxy
         private static CertificateManager CertManager { get; set; }
 
         public static List<string> ExcludedHttpsHostNameRegex = new List<string>();
+        public static List<string> RedirectToSaftyDomainsList = new List<string>();
 
         public static event EventHandler<SessionEventArgs> BeforeRequest;
         public static event EventHandler<SessionEventArgs> BeforeResponse;
@@ -126,8 +127,6 @@ namespace Titanium.Web.Proxy
                 Task.Factory.StartNew(() => HandleClient(client));
             }
             catch { }
-          
-        
         }
 
 
